@@ -1348,6 +1348,7 @@ function Sidebar:create_input(opts)
 
     ---@type AvanteChunkParser
     local on_chunk = function(chunk)
+      Utils.error(chunk, { title = "Avante" })
       original_response = original_response .. chunk
       local transformed = transform_result_content(content, transformed_response .. chunk, filetype)
       transformed_response = transformed.content
